@@ -56,3 +56,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
+
+var bubbles = document.querySelector('.bubbles');
+
+function createBubble() {
+    var bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    var size = Math.floor(Math.random() * 100) + 20;
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+    bubble.style.bottom = '-50px';
+    bubble.style.left = Math.floor(Math.random() * 100) + '%';
+    bubble.style.animationDuration = Math.floor(Math.random() * 20) + 10 + 's';
+    bubble.style.backgroundColor = getRandomColor();
+    bubbles.appendChild(bubble);
+
+    // Trigger the fade in effect
+    setTimeout(function() {
+        bubble.style.opacity = 1;
+    }, 10);
+}
+
+function getRandomColor() {
+    var colors = ['#FF0000', '#FFA500', '#FFFF00', '#008000', '#0000FF', '#800080'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+createBubble();
+setInterval(createBubble, 500);

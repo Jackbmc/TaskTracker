@@ -55,3 +55,39 @@ li span {
     text-decoration: line-through;
     color: #999;
 }
+
+
+
+
+
+
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.bubble {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #E5A00D;
+    opacity: 0;
+    animation: bubble 15s ease-in-out infinite;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: .2;
+    }
+    100% {
+        transform: translateY(-2000px);
+        opacity: 0;
+    }
+}
